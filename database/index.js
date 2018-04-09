@@ -8,6 +8,10 @@ if(process.env.NODE_ENV !== "production") {
 
 const connection = db.createConnection(process.env.CLEARDB_DATABASE_URL || require('../connectionSQL'));
 
+setInterval(function () {
+    connection.query('SELECT 1');
+}, 5000);
+
 (async () => {
 	await connection.connect();
 	
