@@ -6,9 +6,7 @@ if(process.env.NODE_ENV !== "production") {
 	require('dotenv').config();
 }
 
-const connection = db.createConnection(process.env.MARIADB_URL || require('../connectionSQL'));
-
-console.log(process.env.MARIADB_URL);
+const connection = db.createConnection(process.env.CLEARDB_DATABASE_URL || require('../connectionSQL'));
 
 (async () => {
 	await connection.connect();
